@@ -4,19 +4,134 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Promo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #070b16;
+        --panel: rgba(13, 20, 39, 0.78);
+        --text: #edf6ff;
+        --muted: #8fa4c7;
+        --cyan: #55f6ff;
+        --purple: #a879ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 2rem 1rem;
+        color: var(--text);
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(circle at 50% 0%, #17234c 0, var(--bg) 48%);
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.12;
+        background-image:
+          linear-gradient(rgba(85, 246, 255, 0.2) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(85, 246, 255, 0.2) 1px, transparent 1px);
+        background-size: 32px 32px;
+      }
+
+      .profile {
+        width: min(100%, 560px);
+        padding: 2.5rem 1.5rem 1.5rem;
+        text-align: center;
+        background: var(--panel);
+        border: 1px solid rgba(85, 246, 255, 0.25);
+        border-radius: 28px;
+        box-shadow:
+          0 0 55px rgba(86, 67, 255, 0.18),
+          inset 0 0 30px rgba(85, 246, 255, 0.04);
+        backdrop-filter: blur(14px);
+      }
+
+      .avatar {
+        width: 92px;
+        height: 92px;
+        margin: 0 auto 1rem;
+        display: grid;
+        place-items: center;
+        border: 2px solid var(--cyan);
+        border-radius: 50%;
+        color: var(--cyan);
+        font-size: 2rem;
+        font-weight: 800;
+        text-shadow: 0 0 14px var(--cyan);
+        box-shadow: 0 0 24px rgba(85, 246, 255, 0.5);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        letter-spacing: 0.04em;
+      }
+      h1 span {
+        color: var(--cyan);
+      }
+      .tagline {
+        margin: 0.65rem 0 2rem;
+        color: var(--muted);
+      }
+      .links {
+        display: grid;
+        gap: 1rem;
+      }
+      .link-button {
+        display: block;
+        padding: 1rem 1.25rem;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        background: linear-gradient(
+          110deg,
+          rgba(85, 246, 255, 0.1),
+          rgba(168, 121, 255, 0.12)
+        );
+        border: 1px solid rgba(85, 246, 255, 0.38);
+        border-radius: 12px;
+        transition: 0.25s ease;
+      }
+      .link-button:hover {
+        color: #07101b;
+        background: linear-gradient(110deg, var(--cyan), var(--purple));
+        border-color: transparent;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(85, 246, 255, 0.25);
+      }
+      footer {
+        margin-top: 2rem;
+        color: #65799b;
+        font-size: 0.8rem;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>Blog Promo</h1>
+    <header class="profile">
+      <div class="avatar">&lt;↓↓&gt;</div>
+      <h1><span>Links</span> Promo</h1>
+      <p class="tagline">Promoções em um só lugar.</p>
+
+      <nav class="links" aria-label="Links principais">
+        <a class="link-button" href="#">🚀 Nossas novidades</a>
+        <a class="link-button" href="#">⚡ Promoções da semana</a>
+        <a class="link-button" href="#">💻 Projetos e tutoriais</a>
+        <a class="link-button" href="#">📡 Entre em contato</a>
+      </nav>
     </header>
 
-    <main>
-      <h2>Bem-vindo!</h2>
-      <p>Confira nossas novidades e promoções.</p>
-    </main>
-
     <footer>
-      <p>&copy; 2025 Blog Promo</p>
+      <p>&copy; 2025 Links Promo</p>
     </footer>
   </body>
 </html>
